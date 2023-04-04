@@ -33,10 +33,18 @@ function SearchPokemonPage() {
 }
 function HomePage() {
   return (
-    <>
-      <PokemonCard pokemon={pikachu} />
-      <PokemonCard pokemon={nidoqueen} />
-    </>
+    <div
+      style={{
+        display: "grid",
+        gap: 10,
+        gridTemplateColumns: "repeat(4, 1fr)",
+        margin: "1rem 0",
+      }}
+    >
+      {pokemons.map((pokemon) => (
+        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+      ))}
+    </div>
   );
 }
 
