@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { PokemonDetail } from "@/types";
 
@@ -27,6 +28,7 @@ export default function PokemonCard(props: { pokemon: PokemonDetail }) {
           </span>
         ))}
       </div>
+      <Link to={`/pokemon/${pokemon.id}`}>Voir</Link>
     </div>
   );
 }

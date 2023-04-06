@@ -5,10 +5,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import PokemonCard from "./components/PokemonCard";
-import nidoqueen from "./mocks/nidoqueen";
-import pikachu from "./mocks/pikachu";
-import pokemons from "./mocks/pokemons";
+import HomePage from "./components/HomePage";
+import NavBar from "./components/NavBar";
+import PokemonDetailPage from "./components/PokemonDetailPage";
 
 import "./globals.scss";
 import styles from "./App.module.scss";
@@ -16,6 +15,7 @@ import styles from "./App.module.scss";
 function Root() {
   return (
     <div>
+      <NavBar />
       <Link to="/">Accueil</Link>
       <Link to="/recherche">Recherche</Link>
       <Link to="/team">Equipe</Link>
@@ -31,22 +31,6 @@ function Team() {
 function SearchPokemonPage() {
   return <p>🚧 Recherche 🚧</p>;
 }
-function HomePage() {
-  return (
-    <div
-      style={{
-        display: "grid",
-        gap: 10,
-        gridTemplateColumns: "repeat(4, 1fr)",
-        margin: "1rem 0",
-      }}
-    >
-      {pokemons.map((pokemon) => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} />
-      ))}
-    </div>
-  );
-}
 
 const router = createBrowserRouter([
   {
@@ -56,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />,
+      },
+      {
+        path: "pokemon/:pokemonId",
+        element: <PokemonDetailPage />,
       },
       {
         path: "recherche",
