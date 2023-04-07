@@ -5,7 +5,7 @@ import { fetcher } from "@/api";
 import PokemonCard from "@/components/PokemonCard";
 import { PokemonDetail } from "@/types";
 
-import PaginationList from "./src/components/Pagination";
+import PaginationList from "./Pagination";
 
 type PokemonListResult = { count: number; results: PokemonDetail[] };
 

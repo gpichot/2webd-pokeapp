@@ -31,8 +31,7 @@ function Team() {
 function SearchPokemonPage() {
   return <p>🚧 Recherche 🚧</p>;
 }
-
-const router = createBrowserRouter([
+export const routes = [
   {
     path: "/",
     element: <Root />,
@@ -55,7 +54,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+const router = createBrowserRouter(routes);
 
 export default function App() {
   return (
