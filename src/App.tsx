@@ -5,9 +5,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import BattlePage from "./components/BattlePage";
 import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import PokemonDetailPage from "./components/PokemonDetailPage";
+import PokemonForm from "./components/PokemonForm";
 
 import "./globals.scss";
 import styles from "./App.module.scss";
@@ -51,6 +53,10 @@ export const routes = [
       {
         path: "team",
         element: <Team />,
+      },
+      {
+        path: "pokemons/new",
+        element: <PokemonForm />,
       },
     ],
   },

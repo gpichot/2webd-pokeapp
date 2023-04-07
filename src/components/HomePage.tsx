@@ -1,21 +1,14 @@
 import React from "react";
-import useSWR from "swr";
 
-import { fetcher } from "@/api";
+import { usePokemonListQuery } from "@/api-queries";
 import PokemonCard from "@/components/PokemonCard";
-import { PokemonDetail } from "@/types";
 
 import PaginationList from "./Pagination";
-
-type PokemonListResult = { count: number; results: PokemonDetail[] };
 
 export default function HomePage() {
   const [page, setPage] = React.useState(1);
   const offset = 10 * (page - 1);
-  const pokemonsList = useSWR<PokemonListResult>(
-    `/pokemons/?offset=${offset}`,
-    fetcher
-  );
+  const pokemonsList = usePokemonListQuery({ offset });
 
   if (pokemonsList.isLoading) {
     return <p>Loading</p>;

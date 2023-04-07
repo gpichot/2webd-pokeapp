@@ -21,19 +21,19 @@ export default function NavBar() {
       <Navbar>
         <NavbarBrand href="/">reactstrap</NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse navbar isOpen={isOpen}>
-          <Nav navbar className="me-auto">
-            <NavItem>
-              <NavLink href="/">Accueil</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink as={Link} href="/recherche">
-                Recherche
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
-        </Collapse>
+        <Nav navbar className="me-auto">
+          <NavItem>
+            <NavLink href="/">Accueil</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/pokemons/new">New</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink as={Link} href="/recherche">
+              Recherche
+            </NavLink>
+          </NavItem>
+        </Nav>
       </Navbar>
     </div>
   );
